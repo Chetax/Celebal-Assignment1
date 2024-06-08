@@ -1,0 +1,9 @@
+.userdata p{
+    display: flex;
+    align-items: center;
+   margin: 5% 0%;
+}
+.userdata h3{
+ 
+  width: 10vw;
+}

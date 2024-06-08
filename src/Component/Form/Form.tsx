@@ -110,66 +110,85 @@ function Form() {
         <div className="container">
             <form action="" onSubmit={handlesubmit} className="Form">
                 <div className="form-row">
-                    <label htmlFor="fname">Enter First Name</label>
-                    <input type="text" name="fname" value={fname} onChange={(e) => { setfname(e.target.value); }} />
-                    {fnameerror && <span style={{ color: 'red' }}>Enter Valid First Name</span>}
-                </div>
+                    <label htmlFor="fname" >Enter First Name</label>
 
+                   <span>
+                   <input type="text" name="fname" value={fname}  onChange={(e) => { setfname(e.target.value); }} /><br></br>
+                   {fnameerror && <span style={{ color: 'red' }}>Enter Valid First Name</span>}
+                    </span>   
+                 </div>
+                     
                 <div className="form-row">
                     <label htmlFor="lname">Enter Last Name</label>
+                    <span>
                     <input type="text" name="lname" value={lname} onChange={(e) => { setlname(e.target.value); }} />
+                    <br></br>
                     {lnameerror && <span style={{ color: 'red' }}>Enter Valid Last Name</span>}
+                    </span>   
                 </div>
 
                 <div className="form-row">
                     <label htmlFor="uname">Enter User Name</label>
-                    <input type="text" name="uname" value={username} onChange={(e) => { setusername(e.target.value); }} />
+                    <span>
+                    <input type="text" name="uname" value={username} onChange={(e) => { setusername(e.target.value); }} /><br></br>
                     {usernameerror && <span style={{ color: 'red' }}>Enter Valid User Name</span>}
+                    </span>   
                 </div>
 
                 <div className="form-row">
                     <label htmlFor="email">Enter Email</label>
-                    <input type="email" name="email" value={email} onChange={(e) => { setemail(e.target.value); }} />
+                    <span>
+                    <input type="email" name="email" value={email} onChange={(e) => { setemail(e.target.value); }} /><br></br>
                     {emailerror && <span style={{ color: 'red' }}>Enter Valid Email</span>}
+                    </span>
                 </div>
 
                 <div className="form-row">
                     <label htmlFor="password">Enter Password</label>
-                    <input style={{position:'relative'}} type={showpassword ? "text" : "password"} name="password" value={password} onChange={(e) => { setpassword(e.target.value); }} />
-                    {passworderror && <span style={{ color: 'red' }}>Password must be at least 6 characters long, contain a symbol, and an alphabet</span>}
-                   <span> <input type="checkbox" name="showpass" style={{width:"10%"}}  onClick={() => { setshowpassword(!showpassword); }} /> <span>Show password</span></span>
-                   
+                    <span>
+                    <input style={{position:'relative'}} type={showpassword ? "text" : "password"} name="password" value={password} onChange={(e) => { setpassword(e.target.value); }} /><br></br>
+                    {passworderror && <span style={{ color: 'red' }}>Password less than 6   </span>} <br></br>
+                    </span>
+                </div>
+                <div>
+                <input type="checkbox" name="showpass" style={{width:"10%"}}  onClick={() => { setshowpassword(!showpassword); }} /> 
+              <label htmlFor="showpadd">Show Password</label>
                 </div>
 
                 <div className="form-row">
                     <label htmlFor="phone">Enter Phone No.</label>
-                    <select id="countrycode" name="countrycode" value={countrycode} onChange={(e) => { setcountrycode(e.target.value); }} >
-                        <option value="none">CountryCode</option>
+                    <span>
+                    <select id="countrycode" name="countrycode" style={{width:"3vw"}} value={countrycode} onChange={(e) => { setcountrycode(e.target.value); }} >
+                        <option value="none">+No</option>
                         <option value="+62">+62 (Indonesia)</option>
                         <option value="+49">+49 (Germany)</option>
                         <option value="+91">+91 (India)</option>
                         <option value="+81">+81 (Japan)</option>
                         <option value="+1">+1 (United States)</option>
                     </select>
-                    <input type="number" name="phone" value={phone} onChange={(e) => { setphone(e.target.value); }} />
+                    <input type="number" name="phone" value={phone} onChange={(e) => { setphone(e.target.value); }} /><br></br>
                     {phoneerror && <span style={{ color: 'red' }}>Phone Number Should Be Of 10 digits</span>}
+                    </span>
                 </div>
 
                 <div className="form-row">
                     <label htmlFor="country">Enter Country</label>
-                    <select id="country" name="country" value={country} onChange={(e) => { setcountry(e.target.value); }} >
+                    <span>
+                    <select id="country" name="country" value={country} style={{alignContent:'start',width:"15vw"}} onChange={(e) => { setcountry(e.target.value); }} >
                         <option value="none">Select Your Country</option>
                         <option value="India">India</option>
                         <option value="America">America</option>
                         <option value="Canada">Canada</option>
                         <option value="Japan">Japan</option>
-                    </select>
+                    </select><br></br>
                     {countryerror && <span style={{ color: 'red' }}>Please select a country</span>}
+                    </span>
                 </div>
 
                 <div className="form-row">
                     <label htmlFor="city">Choose Your City</label>
-                    <select id="city" name="city" value={city} onChange={(e) => { setcity(e.target.value); }} >
+                    <span style={{}}>
+                    <select  id="city" name="city" style={{alignContent:'start',width:"15vw"}} value={city} onChange={(e) => { setcity(e.target.value); }} >
                         <option value="none">Select Your City</option>
                         {country === "India" ? <>
                             <option value="Pune">Pune</option>
@@ -196,23 +215,28 @@ function Form() {
                             <option value="Yokohama">Yokohama</option>
                             <option value="Sapporo">Sapporo</option>
                         </>}
-                    </select>
+                    </select><br></br>
                     {cityerror && <span style={{ color: 'red' }}>Please select a city</span>}
+                    </span>
                 </div>
 
                 <div className="form-row">
                     <label htmlFor="pan">Enter Pan Number</label>
-                    <input type="text" name="pan" value={panno} onChange={(e) => { setpanno(e.target.value); }} />
-                    {pannoerror && <span style={{ color: 'red' }}>Enter Valid PAN Number (e.g., ABCDE1234F)</span>}
+                    <span>
+                    <input type="text" name="pan" value={panno} onChange={(e) => { setpanno(e.target.value); }} /><br></br>
+                    {pannoerror && <span style={{ color: 'red',fontSize:'12px' }}>Enter Valid PAN Number (e.g., ABCDE1234F)</span>}
+                    </span>
                 </div>
 
                 <div className="form-row">
-                    <label htmlFor="Adhar">Enter Aadhaar Number</label>
-                    <input type="number" name="Adhar" value={adharcard} onChange={(e) => { setadharcard(e.target.value); }} />
+                    <label htmlFor="Adhar">Enter Aadhaar No.</label>
+                    <span>
+                    <input type="number" name="Adhar" value={adharcard} onChange={(e) => { setadharcard(e.target.value); }} /><br></br>
                     {adharcarderror && <span style={{ color: 'red' }}>Enter Valid Aadhaar Number (12 digits)</span>}
+                   </span>
                 </div>
 
-                <button type="submit" style={{cursor:"pointer",display:"flex" ,alignItems:'center' ,justifyContent:'center',width:"30%",height:"5vh"}}>Submit</button>
+                <button type="submit" style={{cursor:"pointer",display:"flex" ,alignItems:'center' ,justifyContent:'center',width:"30%",height:"5vh",marginTop:"15px"}}>Submit</button>
             </form>
         </div>
     );

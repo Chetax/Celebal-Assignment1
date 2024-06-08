@@ -1,27 +1,38 @@
-.container {
-    max-width: 600px;
-    margin: 0 auto;
-    padding: 20px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    background-color: #f9f9f9;
-}
-
-.form-row {
+.container{
+    width: 100vw;
+    background-color: #EAB543;
+    height: 100vh ;
     display: flex;
-    flex-direction: column;
-    margin-bottom: 20px;
- 
+    align-items: center;
+    justify-content: center;
+}
+span{
+    height: 20px;
+    font-size: 14px;
+}
+.Form{
+    background-color: #ffda79;
+    width: 40vw;
+    padding: 4%;
+    border-radius:10px;
+    box-shadow: 1px 1px 4px 2px rgb(92, 86, 86) ;
+
+}
+.form-row{
+    margin-top: 5%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+
 }
 
-label {
-    margin-bottom: 5px;
-}
-
-input, select {
-    padding: 10px;
+.form-row input{
+    height:25px ;
+    width: 15vw;
+    border-radius: 3px;
     border: 1px solid #ccc;
-    border-radius: 5px;
-    width: 100%;
-    box-sizing: border-box;
+    outline: none;
+}
+label{
+    margin-right: 100px;
 }
